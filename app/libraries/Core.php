@@ -19,23 +19,13 @@ class Core
     }
 
     // Method to get the url
-    // public function getUrl()
-    // {
-    //     if (isset($_GET["url"])) {
-    //         $url = rtrim($_GET["url"], "/"); // strip '/' from the end of the url
-    //         $url = filter_var($url, FILTER_SANITIZE_URL); // sanitize the url for security purpose
-    //         $url = explode("/", $url); // explode the url in multiple parts
-
-    //         return $url;
-    //     }
-    // }
-
     public function getUrl()
     {
-        if (isset($_GET['url'])) {
-            $url = rtrim($_GET['url'], '/');
-            $url = filter_var($url, FILTER_SANITIZE_URL);
-            $url = explode('/', $url);
+        if (isset($_GET["url"])) {
+            $url = rtrim($_GET["url"], "/"); // strip '/' from the end of the url
+            $url = filter_var($url, FILTER_SANITIZE_URL); // sanitize the url for security purpose
+            $url = explode("/", $url); // explode the url in multiple parts
+
             return $url;
         }
     }
