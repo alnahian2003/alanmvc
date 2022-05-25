@@ -12,7 +12,6 @@ class Core
     protected $currentMethod = "index";
     protected $params = [];
 
-
     public function __constructor()
     {
         print_r($this->getUrl());
@@ -25,7 +24,6 @@ class Core
             $url = rtrim($_GET["url"], "/"); // strip '/' from the end of the url
             $url = filter_var($url, FILTER_SANITIZE_URL); // sanitize the url for security purpose
             $url = explode("/", $url); // explode the url in multiple parts
-
             return $url;
         }
     }
