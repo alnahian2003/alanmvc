@@ -12,7 +12,7 @@ class Core
     protected $currentMethod = "index";
     protected $params = [];
 
-    public function __constructor()
+    public function __construct()
     {
         print_r($this->getUrl());
     }
