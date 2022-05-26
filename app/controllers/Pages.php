@@ -4,6 +4,14 @@ class Pages
 {
     public function __construct()
     {
-        echo "Page Loaded Successfully";
+    }
+
+    public function index()
+    {
+    }
+
+    public function about($id)
+    {
+        echo "<h1>Welcome to About Page {$id}</h1>";
     }
 }

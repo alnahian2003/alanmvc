@@ -22,7 +22,7 @@ class Core
         // look in controllers for first value
         $controllersPath = "../app/controllers/";
 
-        if ($url && file_exists($controllersPath . ucfirst($url[0]) . ".php")) {
+        if (isset($url) && file_exists($controllersPath . ucfirst($url[0]) . ".php")) {
             // If exists, set as controller
             $this->currentController = ucfirst($url[0]);
             // Unset 0 Index of the url array
@@ -34,6 +34,24 @@ class Core
 
         // Instantiate controller class
         $this->currentController = new $this->currentController;
+
+        // Check for the second part of url
+        if (isset($url[1])) {
+            // Check to see if method exist in controller
+            if (method_exists($this->currentController, $url[1])) {
+                $this->currentMethod = $url[1];
+
+                // Unset 1 Index of the url array
+                unset($url[1]);
+            }
+        }
+
+
+        // Get Parameters
+        $this->params = $url ? array_values($url) : [];
+
+        // Callable callback with array of parameters
+        call_user_func_array([$this->currentController, $this->currentMethod], $this->params);
     }
 
 
