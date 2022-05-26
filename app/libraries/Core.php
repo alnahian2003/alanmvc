@@ -14,14 +14,15 @@ class Core
 
     public function __construct()
     {
+        // $url = $this->getUrl() ?: [$this->currentController]; // alternative fix. remove $url && if it's active
+
         $url = $this->getUrl();
         // print_r($url);
 
         // look in controllers for first value
         $controllersPath = "../app/controllers/";
-        $fileName = $controllersPath . ucfirst($url[0]) . ".php";
 
-        if (file_exists($fileName)) {
+        if ($url && file_exists($controllersPath . ucfirst($url[0]) . ".php")) {
             // If exists, set as controller
             $this->currentController = ucfirst($url[0]);
             // Unset 0 Index of the url array
@@ -34,6 +35,7 @@ class Core
         // Instantiate controller class
         $this->currentController = new $this->currentController;
     }
+
 
     // Method to get the url
     public function getUrl()
