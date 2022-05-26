@@ -14,12 +14,12 @@ class Core
 
     public function __construct()
     {
-        // print_r($this->getUrl());
         $url = $this->getUrl();
+        // print_r($url);
 
         // look in controllers for first value
         $controllersPath = "../app/controllers/";
-        $fileName = $controllersPath . ucfirst($url[0]);
+        $fileName = $controllersPath . ucfirst($url[0]) . ".php";
 
         if (file_exists($fileName)) {
             // If exists, set as controller
@@ -29,7 +29,7 @@ class Core
         }
 
         // Require the controller
-        require_once $controllersPath . $this->$currentController . "php";
+        require_once $controllersPath . $this->currentController . ".php";
 
         // Instantiate controller class
         $this->currentController = new $this->currentController;
