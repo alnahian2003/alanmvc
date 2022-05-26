@@ -30,6 +30,9 @@ class Core
 
         // Require the controller
         require_once $controllersPath . $this->$currentController . "php";
+
+        // Instantiate controller class
+        $this->currentController = new $this->currentController;
     }
 
     // Method to get the url
