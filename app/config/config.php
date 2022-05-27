@@ -1,18 +1,23 @@
 <?php
 // Database Parameters
 {
-    $db = [
-        "db_host" => "localhost",
-        "db_username" => "root",
-        "db_password" => "",
-        "db_name" => "alanmvc_db",
-    ];
+    define("DB_HOST", "localhost");
+    define("DB_USERNAME", "root");
+    define("DB_PASSWORD", "");
+    define("DB_NAME", "alanmvc_db");
 
-    /* Plugins or Extensions like Intellisense, Intellifense will indicate constants above as errors. But they're not. */
-    // Assign key => value as constants 
-    foreach ($db as $key => $value) {
-        define(strtoupper($key), $value);
-    }
+    // $db = [
+    //     "db_host" => "localhost",
+    //     "db_username" => "root",
+    //     "db_password" => "",
+    //     "db_name" => "alanmvc_db",
+    // ];
+
+    // /* Plugins or Extensions like Intellisense, Intellifense will indicate constants above as errors. But they're not. */
+    // // Assign key => value as constants 
+    // foreach ($db as $key => $value) {
+    //     define(strtoupper($key), $value);
+    // }
 }
 
 // App Root
