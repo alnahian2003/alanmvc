@@ -24,7 +24,7 @@ class Database
         $options = [
             PDO::ATTR_PERSISTENT => true,
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_EMULATE_PREPARES => false
+            PDO::ATTR_EMULATE_PREPARES => false,
         ];
 
         // Create PDO Instance
@@ -69,5 +69,23 @@ class Database
     public function execute()
     {
         return $this->stmt->execute();
+    }
+
+    // Fetch result/values as array of objects
+    public function resultSet()
+    {
+        $this->execute();
+        return $this->stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function single()
+    {
+        $this->execute();
+        return $this->stmt->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function RowCount()
+    {
+        return $this->stmt->rowCount();
     }
 }
