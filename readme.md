@@ -1,3 +1,3 @@
 # This is my personal MVC framework, called ALAN MVC
 
-[preview](https://raw.githubusercontent.com/alnahian2003/alanmvc/master/preview.png)
+<img src="https://raw.githubusercontent.com/alnahian2003/alanmvc/master/preview.png" alt="preview">
