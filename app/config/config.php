@@ -1,30 +1,17 @@
 <?php
 // Database Parameters
 {
-    define("DB_HOST", "localhost");
-    define("DB_USERNAME", "root");
-    define("DB_PASSWORD", "");
-    define("DB_NAME", "alanmvc");
-
-    // $db = [
-    //     "db_host" => "localhost",
-    //     "db_username" => "root",
-    //     "db_password" => "",
-    //     "db_name" => "alanmvc_db",
-    // ];
-
-    // /* Plugins or Extensions like Intellisense, Intellifense will indicate constants above as errors. But they're not. */
-    // // Assign key => value as constants 
-    // foreach ($db as $key => $value) {
-    //     define(strtoupper($key), $value);
-    // }
+    define("DB_HOST", "localhost"); // Use your own db host name
+    define("DB_USERNAME", ""); // Use your own db username name
+    define("DB_PASSWORD", ""); // Use your own db password name
+    define("DB_NAME", ""); // Use your own db name name
 }
 
 // App Root
 define("APP_ROOT", dirname(dirname(__FILE__)));
 
 // URL Root
-define("URL_ROOT", "http://localhost/alanmvc");
+define("URL_ROOT", ""); // Use your website url here
 
 // Site Name
-define("SITE_NAME", "Alan MVC"); // We can keep this name for now. This can be changed later for production purpose.
+define("SITE_NAME", ""); // Use your website/project name here
