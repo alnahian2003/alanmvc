@@ -2,17 +2,23 @@
 
 class Pages extends Controller
 {
-    public function __construct()
-    {
-    }
+    // public function __construct()
+    // {
+    // }
 
     public function index()
     {
-        $this->view("index");
+        $data = [
+            "title" => "Welcome, Home!",
+        ];
+        $this->view("pages/index", $data);
     }
 
-    public function about($id)
+    public function about()
     {
-        echo "<h1>Welcome to About Page {$id}</h1>";
+        $data = [
+            "title" => "Learn About Us",
+        ];
+        $this->view("pages/about", $data);
     }
 }
