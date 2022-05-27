@@ -26,5 +26,13 @@ class Database
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_EMULATE_PREPARES => false
         ];
+
+        // Create PDO Instance
+        try {
+            $this->dbh = new PDO($dsn, $this->username, $this->password);
+        } catch (PDOException $e) {
+            $this->error = $e->getMessage();
+            echo $this->error;
+        }
     }
 }
