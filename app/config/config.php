@@ -8,7 +8,7 @@
         "db_name" => "alanmvc_db",
     ];
 
-    /* Plugins or Extensions like Intellisense, Intellifense will indicate constants above as error. But they're not. */
+    /* Plugins or Extensions like Intellisense, Intellifense will indicate constants above as errors. But they're not. */
     // Assign key => value as constants 
     foreach ($db as $key => $value) {
         define(strtoupper($key), $value);
