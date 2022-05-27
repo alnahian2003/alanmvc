@@ -4,7 +4,7 @@
     define("DB_HOST", "localhost");
     define("DB_USERNAME", "root");
     define("DB_PASSWORD", "");
-    define("DB_NAME", "alanmvc_db");
+    define("DB_NAME", "alanmvc");
 
     // $db = [
     //     "db_host" => "localhost",
