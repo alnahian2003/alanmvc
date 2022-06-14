@@ -31,8 +31,8 @@ class Database
         try {
             $this->dbh = new PDO($dsn, $this->username, $this->password);
         } catch (PDOException $e) {
-            $this->error = $e->getMessage();
-            echo $this->error;
+            $this->err = $e->getMessage();
+            echo $this->err;
         }
     }
     // Prepare statement with query 
